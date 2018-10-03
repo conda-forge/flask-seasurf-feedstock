@@ -1,9 +1,9 @@
-{%set name = "Flask-SeaSurf" %}
-{%set version = "0.2.2" %}
-{%set compress_type = "tar.gz" %}
-{%set hash_type = "sha256" %}
-{%set hash_val = "c57918c17e9afd988bdc30d8dcb7bfb833741dee38b06c1bbd17821d6fa2b6cf" %}
-{%set build_num = "0" %}
+{% set name = "Flask-SeaSurf" %}
+{% set version = "0.2.2" %}
+{% set compress_type = "tar.gz" %}
+{% set hash_type = "sha256" %}
+{% set hash_val = "c57918c17e9afd988bdc30d8dcb7bfb833741dee38b06c1bbd17821d6fa2b6cf" %}
+{% set build_num = "1000" %}
 
 package:
   name: {{ name|lower }}
@@ -16,13 +16,13 @@ source:
 
 build:
   number: {{ build_num }}
-  script: python setup.py install --single-version-externally-managed --record=record.txt
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv"
 
 requirements:
-  build:
+  host:
     - python
+    - pip
     - setuptools
-
   run:
     - python
     - flask

@@ -3,7 +3,7 @@ About flask-seasurf
 
 Home: https://github.com/maxcountryman/flask-seasurf/
 
-Package license: BSD 3-Clause
+Package license: BSD-3-Clause
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/flask-seasurf-feedstock/blob/master/LICENSE.txt)
 

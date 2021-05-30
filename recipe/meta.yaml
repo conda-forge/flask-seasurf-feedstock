@@ -1,5 +1,5 @@
 {% set name = "Flask-SeaSurf" %}
-{% set version = "0.2.3" %}
+{% set version = "0.3.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,25 +7,29 @@ package:
 
 source:
   url: https://github.com/maxcountryman/flask-seasurf/archive/{{ version }}.tar.gz
-  sha256: a3af184f32190217704720628e3694ea533004d238b644fe96d0bc7bac5b2d62
+  sha256: 86d5d98b7969fea96a7e9370af79f0096cf3bc6a99ca7e3ff592fe19ff0ab748
 
 build:
   noarch: python
   number: 0
-  script: "{{ PYTHON }} -m pip install . -vvv"
+  script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python
+    - python >=3.6
     - pip
     - setuptools
   run:
-    - python
+    - python >=3.6
     - flask
 
 test:
   imports:
     - flask_seasurf
+  commands:
+    - pip check
+  requires: 
+    - pip
 
 about:
   home: https://github.com/maxcountryman/flask-seasurf/
@@ -37,3 +41,4 @@ about:
 extra:
   recipe-maintainers:
     - pmlandwehr
+    - jan-janssen

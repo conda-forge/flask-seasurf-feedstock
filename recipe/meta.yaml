@@ -1,5 +1,5 @@
 {% set name = "Flask-SeaSurf" %}
-{% set version = "0.3.0" %}
+{% set version = "0.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/maxcountryman/flask-seasurf/archive/{{ version }}.tar.gz
-  sha256: 86d5d98b7969fea96a7e9370af79f0096cf3bc6a99ca7e3ff592fe19ff0ab748
+  sha256: de84c7f1ae5bf16c39965ce7d73069c676cfea85dd9d0ec519bb729809a31732
 
 build:
   noarch: python
@@ -28,14 +28,14 @@ test:
     - flask_seasurf
   commands:
     - pip check
-  requires: 
+  requires:
     - pip
 
 about:
   home: https://github.com/maxcountryman/flask-seasurf/
   license: BSD-3-Clause
   license_file: LICENSE
-  summary: 'An updated CSRF extension for Flask.'
+  summary: An updated CSRF extension for Flask.
   doc_url: https://flask-seasurf.readthedocs.io/en/latest/
 
 extra:

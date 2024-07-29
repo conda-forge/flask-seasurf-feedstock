@@ -1,5 +1,5 @@
 {% set name = "Flask-SeaSurf" %}
-{% set version = "1.1.1" %}
+{% set version = "2.0.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/maxcountryman/flask-seasurf/archive/{{ version }}.tar.gz
-  sha256: cadf64297c6e33743c078e5269643effe3dd5d880a75682692a487aeec8edc15
+  sha256: d0f76af8abd993ca3dcb6d2065fa242900c2078bf0fb70cb81a17eba0b6b0705
 
 build:
   noarch: python

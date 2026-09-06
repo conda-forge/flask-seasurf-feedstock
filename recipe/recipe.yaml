@@ -1,0 +1,48 @@
+schema_version: 1
+
+context:
+  name: Flask-SeaSurf
+  version: "2.0.0"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://github.com/maxcountryman/flask-seasurf/archive/${{ version }}.tar.gz
+  sha256: d0f76af8abd993ca3dcb6d2065fa242900c2078bf0fb70cb81a17eba0b6b0705
+
+build:
+  number: 2
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python ${{ python_min }}.*
+    - pip
+    - setuptools
+  run:
+    - python >=${{ python_min }}
+    - flask
+
+tests:
+  - python:
+      imports:
+        - flask_seasurf
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+
+about:
+  license: BSD-3-Clause
+  license_file: LICENSE
+  summary: An updated CSRF extension for Flask.
+  homepage: https://github.com/maxcountryman/flask-seasurf/
+  documentation: https://flask-seasurf.readthedocs.io/en/latest/
+
+extra:
+  recipe-maintainers:
+    - pmlandwehr
+    - jan-janssen
